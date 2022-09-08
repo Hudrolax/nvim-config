@@ -1,4 +1,3 @@
-```
 set mouse=a  " enable mouse
 set encoding=utf-8
 set number
@@ -391,4 +390,3 @@ for _, lsp in ipairs(servers) do
   hi DiagnosticWarn  guifg=White
   hi DiagnosticInfo  guifg=White
   hi DiagnosticHint  guifg=White
-```
