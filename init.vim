@@ -390,3 +390,27 @@ hi DiagnosticError guifg=White
 hi DiagnosticWarn  guifg=White
 hi DiagnosticInfo  guifg=White
 hi DiagnosticHint  guifg=White
+
+autocmd vimenter * if !argc()|NERDTree|endif
+" autocmd vimenter * NERDTree
+"Включите / выключите ярлык nerdtree
+map <C-f> :NERDTreeToggle<CR>
+let NERDTreeShowBookmarks = 1
+" Автоматически закрыть nvim, если NERDTree остается последним окном
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"Не показывать скрытые файлы
+let g:NERDTreeHidden=0
+let NERDTreeMinimalUI=1
+let g:NERDTreeIndicatorMapCustom = { 
+        \ "Modified"  : "✹",
+        \ "Staged"    : "✚",
+        \ "Untracked" : "✭",
+        \ "Renamed"   : "➜",
+        \ "Unmerged"  : "═",
+        \ "Deleted"   : "✖",
+        \ "Dirty"     : "✗",
+        \ "Clean"     : "✔︎",
+        \ 'Ignored'   : '☒',
+        \ "Unknown"   : "?"
+    \ }
+let NERDTreeMapOpenInTab='<TAB>'
